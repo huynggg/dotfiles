@@ -1,0 +1,22 @@
+tasks:
+  new_anime:
+    rss: https://nyaa.si/?page=rss
+    series:
+      - Aharen-san wa Hakarenai: {from_group: SubsPlease, quality: 720p}
+      - Love All Play: {from_group: SubsPlease, quality: 720p}
+      - Heroine Tarumono! Kiraware Heroine to Naisho no Oshigoto: {from_group: SubsPlease, quality: 720p}
+      - Mahoutsukai Reimeiki: {from_group: SubsPlease, quality: 720p}
+      - Shokei Shoujo no Virgin Road: {from_group: SubsPlease, quality: 720p}
+      - Shijou Saikyou no Daimaou, Murabito A ni Tensei suru: {from_group: SubsPlease, quality: 720p}
+      - Deaimon: {from_group: SubsPlease, quality: 720p}
+      - Tate no Yuusha no Nariagari S2: {from_group: SubsPlease, quality: 720p}
+      - Shachiku-san wa Youjo Yuurei ni Iyasaretai: {from_group: SubsPlease, quality: 720p}
+      - Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu: {from_group: SubsPlease, quality: 720p}
+      - Tomodachi Game: {from_group: Erai-raws, quality: 720p}
+      - Kawaii dake ja Nai Shikimori-san: {from_group: SubsPlease, quality: 720p}
+      - Spy x Family: {from_group: SubsPlease, quality: 720p}
+      - Koi wa Sekai Seifuku no Ato de: {from_group: SubsPlease, quality: 720p}
+      - Ao Ashi: {from_group: SubsPlease, quality: 720p} 
+      - Yuusha, Yamemasu: {from_group: SubsPlease, quality: 720p}
+
+    download: /mnt/HDD/shared/torrents

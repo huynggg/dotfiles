@@ -1,0 +1,200 @@
+2022-03-12 17:44:16 VERBOSE  manager                       Creating new database /home/neko/.flexget/db-config.sqlite - DO NOT INTERRUPT ...
+2022-03-12 17:44:54 CRITICAL manager                       while parsing a flow mapping in "<unicode string>", line 5, column 50: ... ji no Akaji Kokka Saisei Jutsu: {from_group: SubsPlease, quality$ ^ expected ',' or '}', but got ':' in "<unicode string>", line 6, column 49: ... Shugi Yuusha no Oukoku Saikenki: {from_group: SubsPlease, qualit$ ^
+2022-03-12 17:44:54 CRITICAL manager                       Failed to load config file: Config file is not valid YAML
+2022-03-12 17:49:05 CRITICAL manager                       while parsing a block mapping in "<unicode string>", line 3, column 5: rss: https://nyaa.si/?page=rss ^ expected <block end>, but found '<block sequence start>' in "<unicode string>", line 6, column 7: - Genjitsu Shugi Yuusha no Oukok ... ^
+2022-03-12 17:49:05 CRITICAL manager                       Failed to load config file: Config file is not valid YAML
+2022-03-12 17:51:56 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-03-12 17:51:58 VERBOSE  details       new_anime       Produced 75 entries.
+2022-03-12 17:51:58 INFO     parser_internal new_anime       Title `[Raze] Sono Bisque Doll wa Koi wo Suru - 10 x265 10bit 1080p 120fps.mkv` looks like series `Sono Bisque Doll Wa Koi Wo Suru` but cannot find a(n) `ep` style identifier.
+2022-03-12 17:51:59 VERBOSE  details       new_anime       Summary - Accepted: 0 (Rejected: 0 Undecided: 75 Failed: 0)
+2022-03-13 17:48:22 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-03-13 17:48:24 VERBOSE  details       new_anime       Produced 75 entries.
+2022-03-13 17:48:25 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Shingeki no Kyojin (The Final Season) - 85 (1080p) [7DEDA09C].mkv` by series plugin because season pack support is turned off
+2022-03-13 17:48:25 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Shingeki no Kyojin (The Final Season) - 85 (720p) [43E56853].mkv` by series plugin because season pack support is turned off
+2022-03-13 17:48:25 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Shingeki no Kyojin (The Final Season) - 85 (480p) [B05DE84D].mkv` by series plugin because season pack support is turned off
+2022-03-13 17:48:26 VERBOSE  details       new_anime       Summary - Accepted: 0 (Rejected: 3 Undecided: 72 Failed: 0)
+2022-03-13 17:49:56 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-03-13 17:49:58 VERBOSE  details       new_anime       Produced 75 entries.
+2022-03-13 17:49:59 VERBOSE  series.db     new_anime       identified by is currently on `auto` for Shingeki no Kyojin (The Final Season). Multiple id types may be accepted until it locks in on the appropriate type.
+2022-03-13 17:49:59 VERBOSE  series        new_anime       Ignored `[SubsPlease] Shingeki no Kyojin (The Final Season) - 85 (1080p) [7DEDA09C].mkv`. Does not meet quality requirement `720p`.
+2022-03-13 17:49:59 VERBOSE  series        new_anime       Ignored `[SubsPlease] Shingeki no Kyojin (The Final Season) - 85 (480p) [B05DE84D].mkv`. Does not meet quality requirement `720p`.
+2022-03-13 17:49:59 VERBOSE  task          new_anime       ACCEPTED: `[SubsPlease] Shingeki no Kyojin (The Final Season) - 85 (720p) [43E56853].mkv` by series plugin because matches quality
+2022-03-13 17:49:59 INFO     download      new_anime       Downloading: [SubsPlease] Shingeki no Kyojin (The Final Season) - 85 (720p) [43E56853].mkv
+2022-03-13 17:49:59 VERBOSE  details       new_anime       Summary - Accepted: 1 (Rejected: 0 Undecided: 74 Failed: 0)
+2022-03-14 12:02:05 INFO     log_once                      Good! Your crontab environment seems to be same as terminal.
+2022-03-14 12:02:05 INFO     manager       new_anime       Running database cleanup.
+2022-03-14 12:02:05 INFO     db_analyze    new_anime       Running ANALYZE on database to improve performance.
+2022-03-14 12:02:05 INFO     db_vacuum     new_anime       Running VACUUM on database to improve performance and decrease db size.
+2022-03-14 12:02:09 INFO     download      new_anime       Downloading: [SubsPlease] Sabikui Bisco - 10 (720p) [20C2EAF5].mkv
+2022-03-14 12:02:30 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-03-14 12:02:32 VERBOSE  details       new_anime       Produced 75 entries.
+2022-03-14 12:02:33 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Sabikui Bisco - 10 (720p) [20C2EAF5].mkv` by seen plugin because entry with title `[SubsPlease] Sabikui Bisco - 10 (720p) [20C2EAF5].mkv` is already marked seen in the task new_anime at 2022-03-14 12:02
+2022-03-14 12:02:34 VERBOSE  series.db     new_anime       identified by is currently on `auto` for Sabikui Bisco. Multiple id types may be accepted until it locks in on the appropriate type.
+2022-03-14 12:02:34 VERBOSE  series        new_anime       Ignored `[SubsPlease] Sabikui Bisco - 10 (1080p) [5D3BBB08].mkv`. Does not meet quality requirement `720p`.
+2022-03-14 12:02:34 VERBOSE  series        new_anime       Ignored `[SubsPlease] Sabikui Bisco - 10 (480p) [5631A34A].mkv`. Does not meet quality requirement `720p`.
+2022-03-14 12:02:34 VERBOSE  details       new_anime       Summary - Accepted: 0 (Rejected: 1 Undecided: 74 Failed: 0)
+2022-03-14 14:00:32 INFO     parser_internal new_anime       Title `[Raze] Tribe Nine - 10 x265 10bit 1080p 120fps.mkv` looks like series `Tribe Nine` but cannot find a(n) `ep` style identifier.
+2022-03-15 10:00:15 INFO     download      new_anime       Downloading: [SubsPlease] Tensai Ouji no Akaji Kokka Saisei Jutsu - 10 (720p) [6FB06008].mkv
+2022-03-15 12:00:24 INFO     parser_internal new_anime       Title `[LBA]Tensai.Ouji.10.x264.AAC.720p.HARDSUB.mp4` looks like series `Tensai Ouji` but cannot find a(n) `ep` style identifier.
+2022-03-16 12:00:16 INFO     download      new_anime       Downloading: [SubsPlease] Hakozume - Kouban Joshi no Gyakushuu - 11 (720p) [36E5B996].mkv
+2022-03-16 14:00:20 INFO     parser_internal new_anime       Title `[LBA]Orient.11.x264.AAC.720p.HARDSUB.mp4` looks like series `Orient` but cannot find a(n) `ep` style identifier.
+2022-03-16 14:00:20 INFO     parser_internal new_anime       Title `[LBA]Leadale.no.Daichi.nite.11.x264.AAC.720p.HARDSUB.mp4` looks like series `Leadale No Daichi Nite` but cannot find a(n) `ep` style identifier.
+2022-03-17 12:00:14 INFO     parser_internal new_anime       Title `[Raze] Mushoku Tensei - 24 x265 10bit 1080p 120fps.mkv` looks like series `Mushoku Tensei` but cannot find a(n) `ep` style identifier.
+2022-03-17 12:00:15 INFO     download      new_anime       Downloading: [SubsPlease] Arifureta Shokugyou de Sekai Saikyou S2 - 10 (720p) [EC1104A4].mkv
+2022-03-17 14:00:21 INFO     download      new_anime       Downloading: [SubsPlease] Ousama Ranking - 22 (720p) [700EBD27].mkv
+2022-03-18 12:00:15 INFO     parser_internal new_anime       Title `[Raze] Platinum End - 23 x265 10bit 1080p 120fps.mkv` looks like series `Platinum End` but cannot find a(n) `ep` style identifier.
+2022-03-18 16:00:15 INFO     parser_internal new_anime       Title `[Raze] Vanitas no Carte - 22 x265 10bit 1080p 120fps.mkv` looks like series `Vanitas No Carte` but cannot find a(n) `ep` style identifier.
+2022-03-19 10:00:16 INFO     download      new_anime       Downloading: [SubsPlease] Shikkakumon no Saikyou Kenja - 11 (720p) [FF76895C].mkv
+2022-03-19 12:00:21 INFO     download      new_anime       Downloading: [SubsPlease] Sono Bisque Doll wa Koi wo Suru - 11 (720p) [E49F837C].mkv
+2022-03-19 12:00:22 INFO     download      new_anime       Downloading: [SubsPlease] 86 - Eighty Six - 23 (720p) [8CC18DB8].mkv
+2022-03-19 14:00:20 INFO     parser_internal new_anime       Title `[Raze] Sono Bisque Doll wa Koi wo Suru - 11 x265 10bit 1080p 120fps.mkv` looks like series `Sono Bisque Doll Wa Koi Wo Suru` but cannot find a(n) `ep` style identifier.
+2022-03-19 14:00:20 INFO     parser_internal new_anime       Title `[LBA]Ryman's.Club.08.x264.AAC.720p.HARDSUB.mp4` looks like series `Ryman's Club` but cannot find a(n) `ep` style identifier.
+2022-03-19 14:00:21 INFO     parser_internal new_anime       Title `[LBA]Shikkakumon.no.Saikyou.Kenja.11.x264.AAC.720p.HARDSUB.mp4` looks like series `Shikkakumon No Saikyou Kenja` but cannot find a(n) `ep` style identifier.
+2022-03-19 14:00:22 INFO     download      new_anime       Downloading: [SubsPlease] Ryman's Club - 08 (720p) [111F0DFD].mkv
+2022-03-19 16:00:19 INFO     parser_internal new_anime       `浜崎あゆみ - Cyber TRANCE presents ayu trance 2 (COMPLETE EDITION) [flac]` appears to be an episode pack
+2022-03-19 18:00:20 INFO     parser_internal new_anime       `Haikyuu!! To the Top - Season 4 Complete + OVA [BDRip] [1080p Dual Audio (Eng + Jap)] + Subs` appears to be an episode pack
+2022-03-20 16:00:15 INFO     download      new_anime       Downloading: [SubsPlease] Shingeki no Kyojin (The Final Season) - 86 (720p) [0CC1F82C].mkv
+2022-03-21 11:00:17 INFO     download      new_anime       Downloading: [SubsPlease] Sabikui Bisco - 11 (720p) [711436F6].mkv
+2022-03-21 13:00:13 INFO     manager       new_anime       Running database cleanup.
+2022-03-21 13:00:13 INFO     db_analyze    new_anime       Running ANALYZE on database to improve performance.
+2022-03-21 20:00:19 INFO     parser_internal new_anime       Title `[Raze] Tribe Nine - 11 x265 10bit 1080p 120fps.mkv` looks like series `Tribe Nine` but cannot find a(n) `ep` style identifier.
+2022-03-21 23:00:14 INFO     parser_internal new_anime       Title `[LBA]Shingeki.no.Kyojin.Final.Season.Pt2.11.x264.AAC.720p.HARDSUB.mp4` looks like series `Shingeki No Kyojin Final Season Pt2` but cannot find a(n) `ep` style identifier.
+2022-03-22 10:00:16 INFO     download      new_anime       Downloading: [SubsPlease] Tensai Ouji no Akaji Kokka Saisei Jutsu - 11 (720p) [7D9BEFB7].mkv
+2022-03-22 14:00:15 INFO     parser_internal new_anime       Title `[LBA]Tensai.Ouji.11.x264.AAC.720p.HARDSUB.mp4` looks like series `Tensai Ouji` but cannot find a(n) `ep` style identifier.
+2022-03-23 11:00:16 INFO     download      new_anime       Downloading: [SubsPlease] Hakozume - Kouban Joshi no Gyakushuu - 12 (720p) [47961B1B].mkv
+2022-03-23 14:00:13 INFO     parser_internal new_anime       Title `[LBA]Orient.12.x264.AAC.720p.HARDSUB.mp4` looks like series `Orient` but cannot find a(n) `ep` style identifier.
+2022-03-23 14:00:13 INFO     parser_internal new_anime       Title `[LBA]Leadale.no.Daichi.nite.12.x264.AAC.720p.HARDSUB.mp4` looks like series `Leadale No Daichi Nite` but cannot find a(n) `ep` style identifier.
+2022-03-24 11:00:17 INFO     download      new_anime       Downloading: [SubsPlease] Arifureta Shokugyou de Sekai Saikyou S2 - 11 (720p) [24B242B1].mkv
+2022-03-24 13:00:19 INFO     download      new_anime       Downloading: [SubsPlease] Ousama Ranking - 23 (720p) [2DAFF318].mkv
+2022-03-24 22:00:15 INFO     parser_internal new_anime       Title `[Raze] Platinum End - 24 x265 10bit 1080p 120fps.mkv` looks like series `Platinum End` but cannot find a(n) `ep` style identifier.
+2022-03-25 15:00:14 INFO     parser_internal new_anime       Title `[Raze] Vanitas no Carte - 23 x265 10bit 1080p 120fps.mkv` looks like series `Vanitas No Carte` but cannot find a(n) `ep` style identifier.
+2022-03-26 10:00:15 INFO     download      new_anime       Downloading: [SubsPlease] Shikkakumon no Saikyou Kenja - 12 (720p) [5B747E49].mkv
+2022-03-26 11:00:22 INFO     parser_internal new_anime       Title `[LBA]Shikkakumon.no.Saikyou.Kenja.12.x264.AAC.720p.HARDSUB.mp4` looks like series `Shikkakumon No Saikyou Kenja` but cannot find a(n) `ep` style identifier.
+2022-03-26 12:00:20 INFO     download      new_anime       Downloading: [SubsPlease] Sono Bisque Doll wa Koi wo Suru - 12 (720p) [7624231B].mkv
+2022-03-26 13:00:22 INFO     download      new_anime       Downloading: [SubsPlease] Genjitsu Shugi Yuusha no Oukoku Saikenki - 25 (720p) [2CB57B5D].mkv
+2022-03-26 14:00:21 INFO     download      new_anime       Downloading: [SubsPlease] Ryman's Club - 09 (720p) [4C130AA4].mkv
+2022-03-26 15:00:29 INFO     parser_internal new_anime       Title `[LBA]Ryman's.Club.09.x264.AAC.720p.HARDSUB.mp4` looks like series `Ryman's Club` but cannot find a(n) `ep` style identifier.
+2022-03-26 17:00:27 INFO     parser_internal new_anime       Title `[Raze] Sono Bisque Doll wa Koi wo Suru - 12 x265 10bit 1080p 120fps.mkv` looks like series `Sono Bisque Doll Wa Koi Wo Suru` but cannot find a(n) `ep` style identifier.
+2022-03-28 11:00:16 INFO     download      new_anime       Downloading: [SubsPlease] Sabikui Bisco - 12 (720p) [9864A674].mkv
+2022-03-28 13:00:14 INFO     manager       new_anime       Running database cleanup.
+2022-03-28 13:00:15 INFO     db_analyze    new_anime       Running ANALYZE on database to improve performance.
+2022-03-29 10:00:14 INFO     parser_internal new_anime       Title `[LBA]Tensai.Ouji.12.x264.AAC.720p.HARDSUB.mp4` looks like series `Tensai Ouji` but cannot find a(n) `ep` style identifier.
+2022-03-29 10:00:15 INFO     download      new_anime       Downloading: [SubsPlease] Tensai Ouji no Akaji Kokka Saisei Jutsu - 12 (720p) [42F8F915].mkv
+2022-03-29 12:00:14 INFO     parser_internal new_anime       Title `[Raze] Tribe Nine - 12 x265 10bit 1080p 120fps.mkv` looks like series `Tribe Nine` but cannot find a(n) `ep` style identifier.
+2022-03-30 11:00:15 INFO     download      new_anime       Downloading: [SubsPlease] Hakozume - Kouban Joshi no Gyakushuu - 13 (720p) [46E5C597].mkv
+2022-03-31 11:00:15 INFO     download      new_anime       Downloading: [SubsPlease] Arifureta Shokugyou de Sekai Saikyou S2 - 12 (720p) [483EA23F].mkv
+2022-04-01 14:00:14 INFO     parser_internal new_anime       Title `[Raze] Vanitas no Carte - 24 x265 10bit 1080p 120fps.mkv` looks like series `Vanitas No Carte` but cannot find a(n) `ep` style identifier.
+2022-04-01 14:00:14 INFO     parser_internal new_anime       Title `[Raze] Shokei Shoujo no Virgin Road - 01 x265 10bit 1080p 144fps.mkv` looks like series `Shokei Shoujo No Virgin Road` but cannot find a(n) `ep` style identifier.
+2022-04-02 13:00:15 INFO     download      new_anime       Downloading: [SubsPlease] Genjitsu Shugi Yuusha no Oukoku Saikenki - 26 (720p) [9297B5BD].mkv
+2022-04-02 14:00:19 INFO     parser_internal new_anime       Title `[LBA]Love.All.Play.01.x264.AAC.720p.HARDSUB.mp4` looks like series `Love All Play` but cannot find a(n) `ep` style identifier.
+2022-04-02 14:00:19 INFO     parser_internal new_anime       Title `[LBA]Ryman's.Club.10.x264.AAC.720p.HARDSUB.mp4` looks like series `Ryman's Club` but cannot find a(n) `ep` style identifier.
+2022-04-02 14:00:21 INFO     download      new_anime       Downloading: [SubsPlease] Ryman's Club - 10 (720p) [828B3D2D].mkv
+2022-04-02 16:00:21 INFO     parser_internal new_anime       Title `[Raze] Build Divide - Code White - 13 x265 10bit 1080p 144fps.mkv` looks like series `Build Divide` but cannot find a(n) `ep` style identifier.
+2022-04-03 16:00:18 INFO     download      new_anime       Downloading: [SubsPlease] Shingeki no Kyojin (The Final Season) - 87 (720p) [38E575B3].mkv
+2022-04-04 14:00:12 INFO     manager       new_anime       Running database cleanup.
+2022-04-04 14:00:12 INFO     db_analyze    new_anime       Running ANALYZE on database to improve performance.
+2022-04-04 21:00:14 INFO     parser_internal new_anime       Title `[LBA]Shingeki.no.Kyojin.Final.Season.Pt2.12.x264.AAC.720p.HARDSUB.mp4` looks like series `Shingeki No Kyojin Final Season Pt2` but cannot find a(n) `ep` style identifier.
+2022-04-05 13:00:15 INFO     download      new_anime       Downloading: [Erai-raws] Tomodachi Game - 01 [720p][Multiple Subtitle][BEC59A9A].mkv
+2022-04-05 23:29:46 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-04-05 23:29:48 VERBOSE  details       new_anime       Produced 75 entries.
+2022-04-05 23:29:49 VERBOSE  details       new_anime       Summary - Accepted: 0 (Rejected: 0 Undecided: 75 Failed: 0)
+2022-04-06 13:00:14 INFO     parser_internal new_anime       Title `[Raze] Shijou Saikyou no Daimaou, Murabito A ni Tensei suru - 01 x265 10bit 1080p 144fps.mkv` looks like series `Shijou Saikyou No Daimaou, Murabito A Ni Tensei Suru` but cannot find a(n) `ep` style identifier.
+2022-04-06 13:00:14 INFO     parser_internal new_anime       Title `[Raze] Yuusha, Yamemasu - 01 x265 10bit 1080p 144fps.mkv` looks like series `Yuusha, Yamemasu` but cannot find a(n) `ep` style identifier.
+2022-04-07 10:00:13 CRITICAL manager                       while parsing a block collection in "<unicode string>", line 5, column 7: - Aharen-san wa Hakarenai: {from ... ^ expected <block end>, but found '?' in "<unicode string>", line 8, column 7: Shokei Shoujo no Virgin Road: {f ... ^
+2022-04-07 10:00:13 CRITICAL manager                       Failed to load config file: Config file is not valid YAML
+2022-04-07 10:02:34 CRITICAL manager                       while parsing a block collection in "<unicode string>", line 5, column 7: - Aharen-san wa Hakarenai: {from ... ^ expected <block end>, but found '?' in "<unicode string>", line 8, column 7: Shokei Shoujo no Virgin Road: {f ... ^
+2022-04-07 10:02:34 CRITICAL manager                       Failed to load config file: Config file is not valid YAML
+2022-04-07 10:04:37 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-04-07 10:04:40 VERBOSE  details       new_anime       Produced 75 entries.
+2022-04-07 10:04:41 VERBOSE  series.db     new_anime       identified by is currently on `auto` for Shachiku-san wa Youjo Yuurei ni Iyasaretai. Multiple id types may be accepted until it locks in on the appropriate type.
+2022-04-07 10:04:41 VERBOSE  series        new_anime       Ignored `[SubsPlease] Shachiku-san wa Youjo Yuurei ni Iyasaretai - 01 (1080p) [C423F097].mkv`. Does not meet quality requirement `720p`.
+2022-04-07 10:04:41 VERBOSE  series        new_anime       Ignored `[SubsPlease] Shachiku-san wa Youjo Yuurei ni Iyasaretai - 01 (480p) [644DFC2B].mkv`. Does not meet quality requirement `720p`.
+2022-04-07 10:04:41 VERBOSE  task          new_anime       ACCEPTED: `[SubsPlease] Shachiku-san wa Youjo Yuurei ni Iyasaretai - 01 (720p) [0F629D4B].mkv` by series plugin because matches quality
+2022-04-07 10:04:42 VERBOSE  series.db     new_anime       identified by is currently on `auto` for Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu. Multiple id types may be accepted until it locks in on the appropriate type.
+2022-04-07 10:04:42 VERBOSE  series        new_anime       Ignored `[SubsPlease] Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu - 01 (1080p) [AAE4BA1E].mkv`. Does not meet quality requirement `720p`.
+2022-04-07 10:04:42 VERBOSE  series        new_anime       Ignored `[SubsPlease] Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu - 01 (480p) [216CDC51].mkv`. Does not meet quality requirement `720p`.
+2022-04-07 10:04:42 VERBOSE  task          new_anime       ACCEPTED: `[SubsPlease] Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu - 01 (720p) [9D01BE4F].mkv` by series plugin because matches quality
+2022-04-07 10:04:42 INFO     download      new_anime       Downloading: [SubsPlease] Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu - 01 (720p) [9D01BE4F].mkv
+2022-04-07 10:04:42 INFO     download      new_anime       Downloading: [SubsPlease] Shachiku-san wa Youjo Yuurei ni Iyasaretai - 01 (720p) [0F629D4B].mkv
+2022-04-07 10:04:42 VERBOSE  details       new_anime       Summary - Accepted: 2 (Rejected: 0 Undecided: 73 Failed: 0)
+2022-04-07 15:00:22 INFO     download      new_anime       Downloading: [SubsPlease] Mahoutsukai Reimeiki - 01 (720p) [48FFF783].mkv
+2022-04-07 23:00:19 INFO     parser_internal new_anime       Title `[Raze] Mahoutsukai Reimeiki - 01 x265 10bit 1080p 144fps.mkv` looks like series `Mahoutsukai Reimeiki` but cannot find a(n) `ep` style identifier.
+2022-04-07 23:00:19 INFO     parser_internal new_anime       Title `[Raze] Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu - 01 x265 10bit 1080p 144fps.mkv` looks like series `Gaikotsu Kishi-sama, Tadaima Isekai E Odekakechuu` but cannot find a(n) `ep` style identifier.
+2022-04-08 10:00:17 INFO     download      new_anime       Downloading: [SubsPlease] Koi wa Sekai Seifuku no Ato de - 01 (720p) [91DC77B5].mkv
+2022-04-08 12:00:16 INFO     download      new_anime       Downloading: [SubsPlease] Shokei Shoujo no Virgin Road - 02 (720p) [8D424714].mkv
+2022-04-08 13:00:17 INFO     parser_internal new_anime       Title `[Raze] Shokei Shoujo no Virgin Road - 02 x265 10bit 1080p 144fps.mkv` looks like series `Shokei Shoujo No Virgin Road` but cannot find a(n) `ep` style identifier.
+2022-04-08 14:00:17 INFO     download      new_anime       Downloading: [SubsPlease] Aharen-san wa Hakarenai - 02 (720p) [1F3CB8C5].mkv
+2022-04-09 06:00:16 INFO     download      new_anime       Downloading: [SubsPlease] Love All Play - 02 (720p) [6FE74190].mkv
+2022-04-09 10:45:16 INFO     download      new_anime       Downloading: [SubsPlease] Spy x Family - 01 (720p) [8FA646CF].mkv
+2022-04-09 11:45:20 INFO     download      new_anime       Downloading: [SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 01 (720p) [E04E3AB1].mkv
+2022-04-09 11:49:26 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-04-09 11:49:28 VERBOSE  details       new_anime       Produced 75 entries.
+2022-04-09 11:49:29 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 01 (720p) [E04E3AB1].mkv` by seen plugin because entry with title `[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 01 (720p) [E04E3AB1].mkv` is already marked seen in the task new_anime at 2022-04-09 11:45
+2022-04-09 11:49:29 VERBOSE  series.db     new_anime       identified by is currently on `auto` for Kunoichi Tsubaki no Mune no Uchi. Multiple id types may be accepted until it locks in on the appropriate type.
+2022-04-09 11:49:29 VERBOSE  series        new_anime       Ignored `[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 01 (1080p) [50D4ACB5].mkv`. Does not meet quality requirement `720p`.
+2022-04-09 11:49:29 VERBOSE  series        new_anime       Ignored `[SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 01 (480p) [8366873F].mkv`. Does not meet quality requirement `720p`.
+2022-04-09 11:49:29 VERBOSE  details       new_anime       Summary - Accepted: 0 (Rejected: 1 Undecided: 74 Failed: 0)
+2022-04-09 12:45:18 INFO     parser_internal new_anime       Title `[Raze] Build Divide - Code White - 14 x265 10bit 1080p 144fps.mkv` looks like series `Build Divide` but cannot find a(n) `ep` style identifier.
+2022-04-09 12:45:18 INFO     parser_internal new_anime       Title `[LBA]Spy.x.Family.01.x264.AAC.720p.HARDSUB.mp4` looks like series `Spy X Family` but cannot find a(n) `ep` style identifier.
+2022-04-09 12:45:18 INFO     parser_internal new_anime       Title `[LBA]Love.All.Play.02.x264.AAC.720p.HARDSUB.mp4` looks like series `Love All Play` but cannot find a(n) `ep` style identifier.
+2022-04-09 13:45:20 INFO     download      new_anime       Downloading: [SubsPlease] Ryman's Club - 11 (720p) [0A53D95C].mkv
+2022-04-09 13:45:20 INFO     download      new_anime       Downloading: [SubsPlease] Kawaii dake ja Nai Shikimori-san - 01 (720p) [4CCE72C6].mkv
+2022-04-09 14:45:20 INFO     parser_internal new_anime       Title `[LBA]Ao.Ashi.01.x264.AAC.720p.HARDSUB.mp4` looks like series `Ao Ashi` but cannot find a(n) `ep` style identifier.
+2022-04-09 14:45:20 INFO     parser_internal new_anime       Title `[LBA]Ryman's.Club.11.x264.AAC.720p.HARDSUB.mp4` looks like series `Ryman's Club` but cannot find a(n) `ep` style identifier.
+2022-04-10 14:45:32 CRITICAL plugin        new_anime       Unable to download the RSS for task new_anime (https://nyaa.si/?page=rss): HTTPSConnectionPool(host='nyaa.si', port=443): Max retries exceeded with url: /?page=rss (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x6ff83810>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2022-04-10 14:45:32 WARNING  task          new_anime       Aborting task (plugin: rss)
+2022-04-11 12:45:14 INFO     parser_internal new_anime       Title `[Raze] Spy x Family - 01 x265 10bit 1080p 144fps.mkv` looks like series `Spy X Family` but cannot find a(n) `ep` style identifier.
+2022-04-11 14:45:11 INFO     manager       new_anime       Running database cleanup.
+2022-04-11 14:45:11 INFO     db_analyze    new_anime       Running ANALYZE on database to improve performance.
+2022-04-12 10:45:14 INFO     parser_internal new_anime       Title `[Raze] Yuusha, Yamemasu - 02 x265 10bit 1080p 144fps.mkv` looks like series `Yuusha, Yamemasu` but cannot find a(n) `ep` style identifier.
+2022-04-12 10:45:16 INFO     download      new_anime       Downloading: [Erai-raws] Tomodachi Game - 02 [720p][Multiple Subtitle][1E8A3948].mkv
+2022-04-13 07:45:16 INFO     download      new_anime       Downloading: [SubsPlease] Shijou Saikyou no Daimaou, Murabito A ni Tensei suru - 02 (720p) [B7F52753].mkv
+2022-04-13 11:45:14 INFO     parser_internal new_anime       Title `[Raze] Shijou Saikyou no Daimaou, Murabito A ni Tensei suru - 02 x265 10bit 1080p 144fps.mkv` looks like series `Shijou Saikyou No Daimaou, Murabito A Ni Tensei Suru` but cannot find a(n) `ep` style identifier.
+2022-04-13 11:45:16 INFO     download      new_anime       Downloading: [SubsPlease] Deaimon - 02 (720p) [54BC4CD2].mkv
+2022-04-13 11:45:17 INFO     download      new_anime       Downloading: [SubsPlease] Tate no Yuusha no Nariagari S2 - 02 (720p) [D8FE8C63].mkv
+2022-04-14 08:45:15 INFO     download      new_anime       Downloading: [SubsPlease] Shachiku-san wa Youjo Yuurei ni Iyasaretai - 02 (720p) [2CC74AB8].mkv
+2022-04-14 09:45:15 INFO     download      new_anime       Downloading: [SubsPlease] Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu - 02 (720p) [A5E6C444].mkv
+2022-04-14 10:45:16 INFO     download      new_anime       Downloading: [SubsPlease] Heroine Tarumono! Kiraware Heroine to Naisho no Oshigoto - 02 (720p) [7EC43BB8].mkv
+2022-04-14 12:45:13 INFO     parser_internal new_anime       Title `[Raze] Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu - 02 x265 10bit 1080p 144fps.mkv` looks like series `Gaikotsu Kishi-sama, Tadaima Isekai E Odekakechuu` but cannot find a(n) `ep` style identifier.
+2022-04-14 14:45:13 INFO     parser_internal new_anime       Title `[Raze] Mahoutsukai Reimeiki - 02 x265 10bit 1080p 144fps.mkv` looks like series `Mahoutsukai Reimeiki` but cannot find a(n) `ep` style identifier.
+2022-04-14 14:45:16 INFO     download      new_anime       Downloading: [SubsPlease] Mahoutsukai Reimeiki - 02 (720p) [BA2E0856].mkv
+2022-04-14 19:06:13 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-04-14 19:06:14 VERBOSE  details       new_anime       Produced 75 entries.
+2022-04-14 19:06:16 VERBOSE  details       new_anime       Summary - Accepted: 0 (Rejected: 0 Undecided: 75 Failed: 0)
+2022-04-15 09:45:15 INFO     download      new_anime       Downloading: [SubsPlease] Koi wa Sekai Seifuku no Ato de - 02 (720p) [794E245F].mkv
+2022-04-15 11:45:15 INFO     download      new_anime       Downloading: [SubsPlease] Shokei Shoujo no Virgin Road - 03 (720p) [C55B5517].mkv
+2022-04-15 13:45:15 INFO     download      new_anime       Downloading: [SubsPlease] Aharen-san wa Hakarenai - 03 (720p) [DB7BBAB7].mkv
+2022-04-15 15:45:13 INFO     parser_internal new_anime       Title `[Raze] Shokei Shoujo no Virgin Road - 03 x265 10bit 1080p 144fps.mkv` looks like series `Shokei Shoujo No Virgin Road` but cannot find a(n) `ep` style identifier.
+2022-04-15 18:26:47 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-04-15 18:26:49 VERBOSE  details       new_anime       Produced 75 entries.
+2022-04-15 18:26:49 VERBOSE  parser_internal new_anime       Title `[Raze] Shokei Shoujo no Virgin Road - 03 x265 10bit 1080p 144fps.mkv` looks like series `Shokei Shoujo No Virgin Road` but cannot find a(n) `ep` style identifier.
+2022-04-15 18:26:50 VERBOSE  details       new_anime       Summary - Accepted: 0 (Rejected: 0 Undecided: 75 Failed: 0)
+2022-04-15 18:28:14 VERBOSE  task_queue                    There are 1 tasks to execute. Shutdown will commence when they have completed.
+2022-04-15 18:28:15 VERBOSE  details       new_anime       Produced 50 entries.
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Aharen-san wa Hakarenai - 03 (720p) [DB7BBAB7].mkv` by seen plugin because entry with title `[SubsPlease] Aharen-san wa Hakarenai - 03 (720p) [DB7BBAB7].mkv` is already marked seen in the task new_anime at 2022-04-15 13:45
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Shokei Shoujo no Virgin Road - 03 (720p) [C55B5517].mkv` by seen plugin because entry with title `[SubsPlease] Shokei Shoujo no Virgin Road - 03 (720p) [C55B5517].mkv` is already marked seen in the task new_anime at 2022-04-15 11:45
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Koi wa Sekai Seifuku no Ato de - 02 (720p) [794E245F].mkv` by seen plugin because entry with title `[SubsPlease] Koi wa Sekai Seifuku no Ato de - 02 (720p) [794E245F].mkv` is already marked seen in the task new_anime at 2022-04-15 09:45
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Mahoutsukai Reimeiki - 02 (720p) [BA2E0856].mkv` by seen plugin because entry with title `[SubsPlease] Mahoutsukai Reimeiki - 02 (720p) [BA2E0856].mkv` is already marked seen in the task new_anime at 2022-04-14 14:45
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Heroine Tarumono! Kiraware Heroine to Naisho no Oshigoto - 02 (720p) [7EC43BB8].mkv` by seen plugin because entry with title `[SubsPlease] Heroine Tarumono! Kiraware Heroine to Naisho no Oshigoto - 02 (720p) [7EC43BB8].mkv` is already marked seen in the task new_anime at 2022-04-14 10:45
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu - 02 (720p) [A5E6C444].mkv` by seen plugin because entry with title `[SubsPlease] Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu - 02 (720p) [A5E6C444].mkv` is already marked seen in the task new_anime at 2022-04-14 09:45
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Shachiku-san wa Youjo Yuurei ni Iyasaretai - 02 (720p) [2CC74AB8].mkv` by seen plugin because entry with title `[SubsPlease] Shachiku-san wa Youjo Yuurei ni Iyasaretai - 02 (720p) [2CC74AB8].mkv` is already marked seen in the task new_anime at 2022-04-14 08:45
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Deaimon - 02 (720p) [54BC4CD2].mkv` by seen plugin because entry with title `[SubsPlease] Deaimon - 02 (720p) [54BC4CD2].mkv` is already marked seen in the task new_anime at 2022-04-13 11:45
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Tate no Yuusha no Nariagari S2 - 02 (720p) [D8FE8C63].mkv` by seen plugin because entry with title `[SubsPlease] Tate no Yuusha no Nariagari S2 - 02 (720p) [D8FE8C63].mkv` is already marked seen in the task new_anime at 2022-04-13 11:45
+2022-04-15 18:28:16 VERBOSE  task          new_anime       REJECTED: `[SubsPlease] Shijou Saikyou no Daimaou, Murabito A ni Tensei suru - 02 (720p) [B7F52753].mkv` by seen plugin because entry with title `[SubsPlease] Shijou Saikyou no Daimaou, Murabito A ni Tensei suru - 02 (720p) [B7F52753].mkv` is already marked seen in the task new_anime at 2022-04-13 07:45
+2022-04-15 18:28:16 VERBOSE  series.db     new_anime       identified by is currently on `auto` for Yuusha, Yamemasu. Multiple id types may be accepted until it locks in on the appropriate type.
+2022-04-15 18:28:16 VERBOSE  task          new_anime       ACCEPTED: `[SubsPlease] Yuusha, Yamemasu - 02 (720p) [0A360EB6].mkv` by series plugin because matches quality
+2022-04-15 18:28:16 INFO     download      new_anime       Downloading: [SubsPlease] Yuusha, Yamemasu - 02 (720p) [0A360EB6].mkv
+2022-04-15 18:28:17 VERBOSE  details       new_anime       Summary - Accepted: 1 (Rejected: 10 Undecided: 39 Failed: 0)
+2022-04-16 05:45:15 INFO     download      new_anime       Downloading: [SubsPlease] Love All Play - 03 (720p) [E8DE750E].mkv
+2022-04-16 07:45:19 INFO     download      new_anime       Downloading: [SubsPlease] Ao Ashi - 02 (720p) [4157213B].mkv
+2022-04-16 10:45:17 INFO     download      new_anime       Downloading: [SubsPlease] Spy x Family - 02 (720p) [30F48507].mkv
+2022-04-16 11:45:20 INFO     parser_internal new_anime       Title `[Raze] Spy x Family - 02 x265 10bit 1080p 144fps.mkv` looks like series `Spy X Family` but cannot find a(n) `ep` style identifier.
+2022-04-16 11:45:22 INFO     download      new_anime       Downloading: [SubsPlease] Kunoichi Tsubaki no Mune no Uchi - 02 (720p) [546212BC].mkv
+2022-04-16 12:45:19 INFO     parser_internal new_anime       Title `[LBA]Ao.Ashi.02.x264.AAC.720p.HARDSUB.mp4` looks like series `Ao Ashi` but cannot find a(n) `ep` style identifier.
+2022-04-16 12:45:19 INFO     parser_internal new_anime       Title `[LBA]Love.All.Play.03.x264.AAC.720p.HARDSUB.mp4` looks like series `Love All Play` but cannot find a(n) `ep` style identifier.
+2022-04-16 12:45:20 INFO     parser_internal new_anime       Title `[LBA]Spy.x.Family.02.x264.AAC.720p.HARDSUB.mp4` looks like series `Spy X Family` but cannot find a(n) `ep` style identifier.
+2022-04-16 13:45:20 INFO     download      new_anime       Downloading: [SubsPlease] Ryman's Club - 12 (720p) [FB62F5A8].mkv
+2022-04-16 13:45:21 INFO     download      new_anime       Downloading: [SubsPlease] Kawaii dake ja Nai Shikimori-san - 02 (720p) [AC038FFC].mkv
+2022-04-16 14:45:19 INFO     parser_internal new_anime       Title `[LBA]Ryman's.Club.12.x264.AAC.720p.HARDSUB.mp4` looks like series `Ryman's Club` but cannot find a(n) `ep` style identifier.
+2022-04-16 15:45:20 INFO     parser_internal new_anime       Title `[Raze] Build Divide - Code White - 15 x265 10bit 1080p 144fps.mkv` looks like series `Build Divide` but cannot find a(n) `ep` style identifier.
+2022-04-17 09:45:13 INFO     parser_internal new_anime       `Super Danganronpa 2: Nangoku Zetsubou Carnival! (スーパーダンガンロンパ2 南国ぜつぼうカーニバル!) 1-4 [COMPLETE]` appears to be an episode pack
