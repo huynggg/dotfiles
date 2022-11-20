@@ -1,22 +1,35 @@
+web_server:
+  bind: 0.0.0.0
+  port: 3539
+  web_ui: yes
+  base_url: /flexget
 tasks:
   new_anime:
     rss: https://nyaa.si/?page=rss
     series:
-      - Aharen-san wa Hakarenai: {from_group: SubsPlease, quality: 720p}
-      - Love All Play: {from_group: SubsPlease, quality: 720p}
-      - Heroine Tarumono! Kiraware Heroine to Naisho no Oshigoto: {from_group: SubsPlease, quality: 720p}
-      - Mahoutsukai Reimeiki: {from_group: SubsPlease, quality: 720p}
-      - Shokei Shoujo no Virgin Road: {from_group: SubsPlease, quality: 720p}
-      - Shijou Saikyou no Daimaou, Murabito A ni Tensei suru: {from_group: SubsPlease, quality: 720p}
-      - Deaimon: {from_group: SubsPlease, quality: 720p}
-      - Tate no Yuusha no Nariagari S2: {from_group: SubsPlease, quality: 720p}
-      - Shachiku-san wa Youjo Yuurei ni Iyasaretai: {from_group: SubsPlease, quality: 720p}
-      - Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu: {from_group: SubsPlease, quality: 720p}
-      - Tomodachi Game: {from_group: Erai-raws, quality: 720p}
-      - Kawaii dake ja Nai Shikimori-san: {from_group: SubsPlease, quality: 720p}
+      # Monday
+      - Shinmai Renkinjutsushi no Tenpo Keiei: {from_group: SubsPlease, quality: 720p}
+      # Tuesday
+      - Chainsaw Man: {from_group: SubsPlease, quality: 720p}
+      # Wednesday
+      - Tensei Shitara Ken Deshita: {from_group: SubsPlease, quality: 720p} 
+      - Kage no Jitsuryokusha ni Naritakute!: {from_group: SubsPlease, quality: 720p}
+      - Do It Yourself!!: {from_group: SubsPlease, quality: 720p}
+      # Thursday
+      - Akiba Maid Sensou: {from_group: SubsPlease, quality: 720p}
+      # Friday
+      # Saturday
       - Spy x Family: {from_group: SubsPlease, quality: 720p}
-      - Koi wa Sekai Seifuku no Ato de: {from_group: SubsPlease, quality: 720p}
-      - Ao Ashi: {from_group: SubsPlease, quality: 720p} 
-      - Yuusha, Yamemasu: {from_group: SubsPlease, quality: 720p}
-
+      - Bocchi the Rock!: {from_group: SubsPlease, quality: 720p}
+      - Blue Lock: {from_group: SubsPlease, quality: 720p} 
+      - Boku no Hero Academia: {from_group: SubsPlease, quality: 720p}
+      - Beast Tamer: {from_group: SubsPlease, quality: 720p}
+      - "Berserk - The Golden Age Arc Memorial Edition": {from_group: SubsPlease, quality: 720p}
+      # Sunday
+      - Fuufu Ijou, Koibito Miman: {from_group: SubsPlease, quality: 720p}
+      - Fumetsu no Anata e S2: {from_group: SubsPlease, quality: 720p}
     download: /mnt/HDD/shared/torrents
+schedules:
+  - tasks: new_anime
+    interval:
+      minutes: 15
