@@ -72,7 +72,7 @@ colorscheme nordic
 " Set airline's theme
 let g:airline_theme='minimalist'
 " the separator used on the left side
-"let g:airline_left_sep=''
+let g:airline_left_sep=''
 " the separator used on the right side 
 let g:airline_right_sep=''
 
