@@ -3,9 +3,9 @@
 
 unlink ~/.bashrc
 unlink ~/.zshrc
-unlink ~/.vimrc
-#unlink ~/.gitconfig
+#unlink ~/.vimrc
 unlink ~/.viminfo
 unlink ~/.p10k.zsh
 unlink ~/.config
-#unlink ~/.git
+unlink ~/.tmux.conf
+unlink ~/.gitmux.conf

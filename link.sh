@@ -8,12 +8,14 @@ ln -sf $SCRIPT_DIR/.zshrc ~/.zshrc
 ln -sf $SCRIPT_DIR/.viminfo ~/.viminfo
 ln -sf $SCRIPT_DIR/.p10k.zsh ~/.p10k.zsh
 ln -sf $SCRIPT_DIR/.config ~/.config
+ln -sf $SCRIPT_DIR/.tmux.conf ~/.tmux.conf
+ln -sf $SCRIPT_DIR/.gitmux.config ~/.gitmux.conf
 
 source ~/.bashrc
 source ~/.zshrc
-source ~/.vimrc
+#source ~/.vimrc
 source ~/.gitconfig
 source ~/.viminfo
 source ~/.p10k.zsh
 source ~/.config/nvim/init.vim
-#source -r ~/.git/*
+tmux source-file ~/.tmux.conf
