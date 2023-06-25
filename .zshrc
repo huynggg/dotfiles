@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias neko="ssh neko@192.168.4.55"
 alias activate="source venv/bin/activate"
+alias vim="nvim"
 
 # Move-by-word
 bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←

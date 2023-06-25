@@ -10,6 +10,9 @@ set splitbelow splitright
 set title
 set ttimeoutlen=0
 set wildmenu
+set fo-=cro
+
+
 
 " Remapping
 nnoremap <F5> :NERDTreeToggle<CR>
