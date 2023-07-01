@@ -1,4 +1,4 @@
-" Options
+"Options
 set background=dark
 set clipboard=unnamedplus
 set completeopt=noinsert,menuone,noselect
@@ -17,6 +17,7 @@ set fo-=cro
 " Remapping
 nnoremap <F5> :NERDTreeToggle<CR>
 nnoremap <F6> :sp<CR>:terminal<CR>
+nnoremap <F4> :Telescope find_files<CR>
 
 " Tabs
 nnoremap <S-Tab> gT
@@ -68,6 +69,12 @@ call plug#begin()
 
     " Git
     Plug 'airblade/vim-gitgutter'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    "Plug 'nvim-telescope/telescope-file-browser.nvim'
+
+" or                                , { 'branch': '0.1.x' }
 call plug#end()
 
 " Set theme
