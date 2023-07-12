@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias neko="ssh neko@192.168.4.55"
+alias neko="ssh neko@192.168.4.73"
 alias activate="source venv/bin/activate"
 alias vim="nvim"
 
