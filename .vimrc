@@ -1,7 +1,10 @@
 colorscheme NeoSolarized
 set background=dark
-syntax on
+" turn hybrid line numbers on
 set number
+
+syntax on
+
 set expandtab
 set tabstop=4
 set softtabstop=4

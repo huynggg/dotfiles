@@ -5,12 +5,16 @@ set completeopt=noinsert,menuone,noselect
 set cursorline
 set hidden
 set inccommand=split
-set number
 set splitbelow splitright
 set title
 set ttimeoutlen=0
 set wildmenu
 set fo-=cro
+
+" turn hybrid line numbers on
+set number relativenumber
+set nu rnu
+
 
 
 
