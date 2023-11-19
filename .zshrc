@@ -106,13 +106,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias neko="ssh neko@192.168.4.73"
+
+# SSH aliases
+alias ssh-main="ssh neko@192.168.4.73"
+alias ssh-octopi="ssh neko@192.168.4.74"
+alias ssh-home="ssh hassio@192.168.4.56"
 alias activate="source venv/bin/activate"
 alias vim="nvim"
-
+alias cat="bat"
 # Move-by-word
 bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
 bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
