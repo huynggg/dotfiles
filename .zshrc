@@ -122,3 +122,4 @@ bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export DISABLE_AUTO_TITLE='true'
