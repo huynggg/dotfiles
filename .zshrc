@@ -108,12 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # SSH aliases
-alias ssh-main="ssh neko@192.168.4.73"
-alias ssh-octopi="ssh neko@192.168.4.74"
-alias ssh-home="ssh hassio@192.168.4.56"
 alias activate="source venv/bin/activate"
 alias vim="nvim"
-alias cat="bat"
 # Move-by-word
 bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
 bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
