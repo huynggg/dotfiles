@@ -10,6 +10,8 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -24,7 +26,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -48,7 +50,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -110,6 +112,9 @@ source $ZSH/oh-my-zsh.sh
 # SSH aliases
 alias activate="source venv/bin/activate"
 alias vim="nvim"
+alias lls='ls -la'
+alias fvim='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {})"'
+alias fzf='fzf -m --preview "bat --color=always {}"'
 # Move-by-word
 bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
 bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
