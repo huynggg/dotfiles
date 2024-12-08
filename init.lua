@@ -257,6 +257,16 @@ require("lazy").setup({
   },
 
   {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end,
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     version = "*",
     dependencies = {
@@ -759,6 +769,7 @@ require("lazy").setup({
         lua = { "stylua" },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
+        bash = { "shfmt" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
