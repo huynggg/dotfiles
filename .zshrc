@@ -126,3 +126,7 @@ bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export DISABLE_AUTO_TITLE='true'
+
+# Enable case-insensitive autocompletion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
