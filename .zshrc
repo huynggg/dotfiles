@@ -125,8 +125,12 @@ bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export DISABLE_AUTO_TITLE='true'
+export DISABLE_AUTO_TITLE="true"
 
 # Enable case-insensitive autocompletion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
+# Install zsh-syntax-highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Install zsh-vim-mode
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
