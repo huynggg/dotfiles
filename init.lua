@@ -255,6 +255,24 @@ require("lazy").setup({
       },
     },
   },
+  {
+    "akinsho/toggleterm.nvim",
+    config = true,
+    cmd = "ToggleTerm",
+    build = ":ToggleTerm",
+    keys = { { "<F3>", "<cmd>ToggleTerm<cr>", desc = "Toggle floating terminal" } },
+    vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>"),
+    opts = {
+      open_mapping = [[<F3>]],
+      direction = "float",
+      -- shade_filetypes = {},
+      -- hide_numbers = true,
+      -- insert_mappings = true,
+      -- terminal_mappings = true,
+      -- start_in_insert = true,
+      -- close_on_exit = true,
+    },
+  },
 
   {
     "kylechui/nvim-surround",
@@ -699,7 +717,7 @@ require("lazy").setup({
             pylsp = {
               plugins = {
                 pycodestyle = {
-                  ignore = { "E501" },
+                  ignore = { "E501", "E402" },
                 },
               },
             },
