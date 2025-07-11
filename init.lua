@@ -164,8 +164,13 @@ vim.opt.scrolloff = 10
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+vim.keymap.set("n", "<leader>gc", function()
+  vim.fn.system("git add -A && git commit -m 'Updated'")
+end, { desc = "Quick Git Commit" })
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+-- vim.keymap.set("n", "<leader>qc", "<cmd>lclose<CR>", { desc = "Close quickfix" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -204,6 +209,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "beancount",
+  callback = function()
+    require("cmp").setup.buffer({
+      sources = {
+        { name = "buffer" },
+      },
+    })
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -237,7 +253,10 @@ require("lazy").setup({
   --
   -- Use `opts = {}` to force a plugin to be loaded.
   --
-
+  {
+    "karb94/neoscroll.nvim",
+    opts = {},
+  },
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
@@ -275,6 +294,44 @@ require("lazy").setup({
   },
 
   {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>xx",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+      {
+        "<leader>xX",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+      {
+        "<leader>cs",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
+        desc = "Symbols (Trouble)",
+      },
+      {
+        "<leader>cl",
+        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        desc = "LSP Definitions / references / ... (Trouble)",
+      },
+      {
+        "<leader>xL",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Location List (Trouble)",
+      },
+      {
+        "<leader>xQ",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Quickfix List (Trouble)",
+      },
+    },
+  },
+
+  {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
@@ -284,14 +341,30 @@ require("lazy").setup({
       })
     end,
   },
+  {
+    "vimichael/floatingtodo.nvim",
+    config = function()
+      require("floatingtodo").setup({
+        target_file = "~/notes/todo.md",
+        width = 0.9,
+        position = "center",
+      })
+      vim.keymap.set("n", "<leader>td", ":Td<CR>", { silent = true })
+    end,
+  },
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {
+      stiffness = 0.5,
+      trailing_stiffness = 0.5,
+      damping = 0.67,
+      matrix_pixel_threshold = 0.5,
+    },
+  },
   -- Lua
   {
     "folke/zen-mode.nvim",
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    opts = {},
   },
   -- Lua
   {
@@ -840,6 +913,7 @@ require("lazy").setup({
       --  into multiple repos for maintenance purposes.
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
     },
     config = function()
       -- See `:help cmp`
@@ -916,6 +990,7 @@ require("lazy").setup({
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "path" },
+          { name = "buffer" },
         },
       })
     end,

@@ -116,6 +116,7 @@ alias ls='ls -l'
 alias fvim='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {})"'
 alias fzf='fzf -m --preview "bat --color=always {}"'
 alias tmux-dev='/Users/huynguyen/scripts/tmux/setup_developing.sh'
+alias tmux-accounting='/Users/huynguyen/scripts/tmux/setup_accounting.sh'
 alias alias-ls='grep ^alias /Users/huynguyen/.zshrc'
 # Move-by-word
 bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
