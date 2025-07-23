@@ -365,30 +365,55 @@ require("lazy").setup({
   {
     "folke/zen-mode.nvim",
     opts = {},
-  },
-  -- Lua
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    version = "*",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    },
-    cmd = "Neotree",
     keys = {
-      { "\\", ":Neotree reveal<CR>", desc = "NeoTree reveal", silent = true },
-    },
-    opts = {
-      filesystem = {
-        window = {
-          mappings = {
-            ["\\"] = "close_window",
-          },
-        },
+      {
+        "<leader>z",
+        function()
+          require("zen-mode").toggle()
+        end,
+        desc = "Toggle Zen Mode",
       },
     },
   },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    keys = {
+      {
+        "<leader>se",
+        ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+        desc = "Open File [E]xplorer",
+      },
+    },
+  },
+  -- Lua
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   version = "*",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   cmd = "Neotree",
+  --   keys = {
+  --     { "\\", ":Neotree reveal<CR>", desc = "NeoTree reveal", silent = true },
+  --   },
+  --   opts = {
+  --     window = {
+  --       position = "float", -- Enable floating mode
+  --       width = 40, -- Optional: set float width
+  --     },
+  --     popup_border_style = "rounded", -- Optional: customize border
+  --     filesystem = {
+  --       window = {
+  --         -- mappings = {
+  --         --   ["\\"] = "close_window",
+  --         -- },
+  --       },
+  --     },
+  --   },
+  -- },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
