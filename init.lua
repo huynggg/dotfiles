@@ -380,7 +380,7 @@ require("lazy").setup({
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     keys = {
       {
-        "<leader>se",
+        "\\",
         ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
         desc = "Open File [E]xplorer",
       },
@@ -559,12 +559,17 @@ require("lazy").setup({
           ["ui-select"] = {
             require("telescope.themes").get_dropdown(),
           },
+          file_browser = {
+            respect_gitignore = false,
+            hijack_netrw = true,
+          },
         },
       })
 
       -- Enable Telescope extensions if they are installed
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension, "ui-select")
+      pcall(require("telescope").load_extension, "file_browser")
 
       -- See `:help telescope.builtin`
       local builtin = require("telescope.builtin")
