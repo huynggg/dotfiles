@@ -134,3 +134,4 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Install zsh-syntax-highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/Users/huynguyen/.local/bin:$PATH"
+export EDITOR="nvim"
