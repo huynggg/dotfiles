@@ -79,9 +79,12 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
+#
+# Always starting with insert mode for each command line
+ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 
 # User configuration
 
@@ -119,8 +122,8 @@ alias tmux-dev='/Users/huynguyen/scripts/tmux/setup_developing.sh'
 alias tmux-accounting='/Users/huynguyen/scripts/tmux/setup_accounting.sh'
 alias alias-ls='grep ^alias /Users/huynguyen/.zshrc'
 # Move-by-word
-bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
-bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
+# bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
+# bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -135,3 +138,11 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/Users/huynguyen/.local/bin:$PATH"
 export EDITOR="nvim"
+alias tt="taskwarrior-tui"
+
+# Defaults for fzf (fuzzyfiding)
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
+
