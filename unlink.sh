@@ -1,4 +1,3 @@
-
 #!bin/bash
 
 unlink ~/.bashrc
@@ -9,3 +8,4 @@ unlink ~/.p10k.zsh
 unlink ~/.config
 unlink ~/.tmux.conf
 unlink ~/.gitmux.conf
+unlink ~/.aerospace.toml
