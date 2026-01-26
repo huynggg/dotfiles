@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 ln -sf $SCRIPT_DIR/.bashrc ~/.bashrc
 ln -sf $SCRIPT_DIR/.zshrc ~/.zshrc
@@ -10,6 +10,7 @@ ln -sf $SCRIPT_DIR/.p10k.zsh ~/.p10k.zsh
 ln -sf $SCRIPT_DIR/.config ~/.config
 ln -sf $SCRIPT_DIR/.tmux.conf ~/.tmux.conf
 ln -sf $SCRIPT_DIR/.gitmux.conf ~/.gitmux.conf
+ln -sf $SCRIPT_DIR/.aerospace.toml ~/.aerospace.toml
 
 source ~/.bashrc
 source ~/.zshrc
@@ -18,4 +19,5 @@ source ~/.gitconfig
 source ~/.viminfo
 source ~/.p10k.zsh
 source ~/.config/nvim/init.vim
+source ~/.aerospace.toml
 tmux source-file ~/.tmux.conf
