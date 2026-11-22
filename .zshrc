@@ -134,7 +134,11 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/Users/huynguyen/.local/bin:$PATH"
 export EDITOR="nvim"
-alias tt="taskwarrior-tui"
+alias lzg="lazygit"
+alias lzs="lazyssh"
+alias todo="tuxedo /Users/huynguyen/Documents/todo.txt"
+alias ssh='ghostty +ssh --'
+
 
 # Defaults for fzf (fuzzyfiding)
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "

@@ -225,3 +225,25 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-name-regex-substring = 'Finder'
     run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'Weather'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    # if.app-id = 'com.apple.reminders'
+    if.app-name-regex-substring = 'Reminders'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    # if.app-id = 'com.apple.reminders'
+    if.app-name-regex-substring = 'Drafts'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'iTerm2'
+    run = ['layout tiling','move-node-to-workspace M']
+
+[[on-window-detected]]
+    if.app-id = 'org.mozilla.firefoxdeveloperedition'
+    run = ['layout tiling','move-node-to-workspace B']
