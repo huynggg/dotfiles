@@ -13,11 +13,11 @@ LINKS=(
   "claude/CLAUDE.md:$HOME/.claude/CLAUDE.md"
   "claude/settings.json:$HOME/.claude/settings.json"
   "git/.gitconfig:$HOME/.gitconfig"
+  "zsh/.zshrc:$HOME/.zshrc"
 )
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   LINKS+=(
-    "zsh/.zshrc:$HOME/.zshrc"
     "aerospace/aerospace.toml:$HOME/.aerospace.toml"
     "lazygit/config.yml:$HOME/Library/Application Support/lazygit/config.yml"
   )

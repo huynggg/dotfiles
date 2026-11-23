@@ -9,8 +9,8 @@
 | `sesh/` | `~/.config/sesh` | all |
 | `claude/CLAUDE.md`, `claude/settings.json` | `~/.claude/` | all |
 | `git/.gitconfig` | `~/.gitconfig` | all |
+| `zsh/.zshrc` | `~/.zshrc` | all |
 | `lazygit/config.yml` | `~/.config/lazygit/` (Linux), `~/Library/Application Support/lazygit/` (macOS) | all |
-| `zsh/.zshrc` | `~/.zshrc` | macOS |
 | `aerospace/aerospace.toml` | `~/.aerospace.toml` | macOS |
 
 ## Install
@@ -22,6 +22,8 @@ git clone https://github.com/huynggg/dotfiles.git ~/dotfiles
 
 Existing files at a target are moved to `<target>.bak.<timestamp>`.
 Re-running is safe.
+
+Shell: zsh (`chsh -s $(command -v zsh)`), plus `zsh-autosuggestions` and `zsh-syntax-highlighting` from apt/Homebrew.
 
 Neovim: requires 0.12+.
 Plugins install on first start.

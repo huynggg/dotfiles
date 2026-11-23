@@ -1,148 +1,53 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Shared zsh config for Linux (Debian) and macOS. Kept simple: no framework, no theme.
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# --- PATH ---
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)" # macOS Homebrew
+typeset -U path # dedupe
+path=(
+  ~/.local/bin                  # claude, uv, yazi, ...
+  /opt/nvim-linux-x86_64/bin(N) # neovim tarball on Linux ((N): skip if missing)
+  $path
+)
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+# --- History ---
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt share_history hist_ignore_all_dups hist_ignore_space hist_reduce_blanks
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# --- Options ---
+setopt auto_cd interactive_comments no_beep
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# --- Completion ---
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case-insensitive
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# --- Vi mode ---
+bindkey -v
+KEYTIMEOUT=1 # fast <Esc>
+bindkey '^?' backward-delete-char # backspace past insert point
+bindkey '^R' history-incremental-search-backward # overridden by fzf below if present
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# --- Prompt: dir, git branch, red on error ---
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' formats ' %F{magenta}(%b)%f'
+precmd() { vcs_info }
+setopt prompt_subst
+PROMPT='%F{blue}%~%f${vcs_info_msg_0_} %(?.%F{green}.%F{red})❯%f '
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# --- Aliases ---
+(( $+commands[batcat] && ! $+commands[bat] )) && alias bat=batcat # Debian names it batcat
+alias vim=nvim
 
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+# --- Tools ---
+(( $+commands[fzf] )) && source <(fzf --zsh)       # Ctrl-R history, Ctrl-T files
+(( $+commands[zoxide] )) && eval "$(zoxide init zsh)" # z <dir>
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-vi-mode)
-
-source $ZSH/oh-my-zsh.sh
-#
-# Always starting with insert mode for each command line
-ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
-# SSH aliases
-alias activate="source venv/bin/activate"
-alias vim="nvim"
-alias ls='ls -l'
-alias fvim='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {})"'
-alias fzf='fzf -m --preview "bat --color=always {}"'
-alias tmux-dev='/Users/huynguyen/scripts/tmux/setup_developing.sh'
-alias tmux-accounting='/Users/huynguyen/scripts/tmux/setup_accounting.sh'
-alias alias-ls='grep ^alias /Users/huynguyen/.zshrc'
-# Move-by-word
-# bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
-# bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export DISABLE_AUTO_TITLE="true"
-
-# Enable case-insensitive autocompletion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# Install zsh-syntax-highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH="/Users/huynguyen/.local/bin:$PATH"
-export EDITOR="nvim"
-alias lzg="lazygit"
-alias lzs="lazyssh"
-alias todo="tuxedo /Users/huynguyen/Documents/todo.txt"
-alias ssh='ghostty +ssh --'
-
-
-# Defaults for fzf (fuzzyfiding)
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
-export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
-
+# --- Plugins (apt on Debian, Homebrew on macOS); syntax-highlighting must be last ---
+for plugin in zsh-autosuggestions zsh-syntax-highlighting; do
+  for dir in /usr/share/$plugin ${HOMEBREW_PREFIX:-/opt/homebrew}/share/$plugin; do
+    [[ -r $dir/$plugin.zsh ]] && source $dir/$plugin.zsh && break
+  done
+done
+unset plugin dir
