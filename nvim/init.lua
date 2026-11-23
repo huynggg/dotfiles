@@ -57,7 +57,37 @@ vim.keymap.set({ "i", "s" }, "<C-h>", function()
   end
 end, { desc = "Snippet: jump backward" })
 
+-- Copy `path:line` (or `path:start-end` in visual mode) to the clipboard, to paste into an agent prompt.
+-- Path is relative to nvim's cwd.
+vim.keymap.set({ "n", "x" }, "<leader>y", function()
+  local path = vim.fn.expand("%:.")
+  if path == "" then
+    return
+  end
+  local first, last = vim.fn.line("v"), vim.fn.line(".")
+  if first > last then
+    first, last = last, first
+  end
+  local ref = (vim.fn.mode():match("[vV\22]") and first ~= last) and ("%s:%d-%d"):format(path, first, last)
+    or ("%s:%d"):format(path, last)
+  vim.fn.setreg("+", ref)
+  if vim.fn.mode():match("[vV\22]") then
+    vim.cmd("normal! \27")
+  end
+  vim.notify("Copied " .. ref)
+end, { desc = "[Y]ank file:line reference" })
+
 -- [[ Autocmds ]]
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  desc = "Reload files changed outside nvim (e.g. by an agent)",
+  group = vim.api.nvim_create_augroup("user-checktime", { clear = true }),
+  callback = function()
+    if vim.fn.getcmdwintype() == "" then
+      vim.cmd("checktime")
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("user-highlight-yank", { clear = true }),
@@ -110,6 +140,15 @@ require("gitsigns").setup({
     topdelete = { text = "‾" },
     changedelete = { text = "~" },
   },
+  on_attach = function(bufnr)
+    local gs = require("gitsigns")
+    vim.keymap.set("n", "]h", function()
+      gs.nav_hunk("next")
+    end, { buffer = bufnr, desc = "Next git [h]unk" })
+    vim.keymap.set("n", "[h", function()
+      gs.nav_hunk("prev")
+    end, { buffer = bufnr, desc = "Previous git [h]unk" })
+  end,
 })
 
 -- Pending keybind hints
