@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# nvim left (60%), claude right (40%), focus on nvim
+left="$TMUX_PANE"
+tmux send-keys -t "$left" "nvim" Enter
+right=$(tmux split-window -h -l 40% -t "$left" -c "#{pane_current_path}" -P -F '#{pane_id}')
+tmux send-keys -t "$right" "claude" Enter
+# sesh creates the session detached at 80 cols; tmux doesn't keep % splits on resize,
+# so re-apply 60% whenever the window is resized (e.g. on attach).
+tmux set-hook -w -t "$left" window-resized "resize-pane -t $left -x 60%"
+tmux select-pane -t "$left"

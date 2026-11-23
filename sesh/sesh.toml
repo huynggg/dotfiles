@@ -1,0 +1,4 @@
+[[session]]
+name = "wms"
+path = "~/dev/apexv/wms"
+startup_command = "~/.config/sesh/scripts/dev-layout"
