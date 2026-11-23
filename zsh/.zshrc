@@ -28,6 +28,12 @@ bindkey -v
 KEYTIMEOUT=1 # fast <Esc>
 bindkey '^?' backward-delete-char # backspace past insert point
 bindkey '^R' history-incremental-search-backward # overridden by fzf below if present
+# Cursor shape per mode: block in normal, beam in insert
+zle-keymap-select zle-line-init() {
+  [[ $KEYMAP == vicmd ]] && printf '\e[2 q' || printf '\e[6 q'
+}
+zle -N zle-keymap-select
+zle -N zle-line-init
 
 # --- Prompt: dir, git branch, red on error ---
 autoload -Uz vcs_info
