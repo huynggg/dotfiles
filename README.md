@@ -8,6 +8,8 @@
 | `tmux/tmux.conf` | `~/.config/tmux/tmux.conf` | all |
 | `sesh/` | `~/.config/sesh` | all |
 | `claude/CLAUDE.md`, `claude/settings.json` | `~/.claude/` | all |
+| `git/.gitconfig` | `~/.gitconfig` | all |
+| `lazygit/config.yml` | `~/.config/lazygit/` (Linux), `~/Library/Application Support/lazygit/` (macOS) | all |
 | `zsh/.zshrc` | `~/.zshrc` | macOS |
 | `aerospace/aerospace.toml` | `~/.aerospace.toml` | macOS |
 
@@ -28,7 +30,7 @@ Then run `:InstallTools` once for LSP servers, formatters and treesitter parsers
 ## Adding a new config
 
 1. Move the config into its own folder: `mv ~/.config/foo ~/dotfiles/foo`.
-2. Add `"foo:$HOME/.config/foo"` to `LINKS` in `install.sh` (inside the macOS block if Mac-only).
+2. Add `"foo:$HOME/.config/foo"` to `LINKS` in `install.sh` (in the macOS or Linux block if OS-specific).
 3. Run `./install.sh`, add a row to the table above, commit.
 
 ## Rules

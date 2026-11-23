@@ -1,0 +1,4 @@
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_DiffRenderers.md
+git:
+  diffRenderers:
+    - command: delta --{{colorScheme}} --paging=never
