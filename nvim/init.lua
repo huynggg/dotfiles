@@ -77,6 +77,39 @@ vim.keymap.set({ "n", "x" }, "<leader>y", function()
   vim.notify("Copied " .. ref)
 end, { desc = "[Y]ank file:line reference" })
 
+-- Floating terminal, toggled with <A-t>. One shell is kept between toggles; it starts in nvim's cwd.
+local term = { buf = -1, win = -1 }
+vim.keymap.set({ "n", "t" }, "<A-t>", function()
+  if vim.api.nvim_win_is_valid(term.win) then
+    vim.api.nvim_win_hide(term.win)
+    return
+  end
+  local new = not vim.api.nvim_buf_is_valid(term.buf)
+  if new then
+    term.buf = vim.api.nvim_create_buf(false, true)
+  end
+  local w, h = math.floor(vim.o.columns * 0.8), math.floor(vim.o.lines * 0.8)
+  term.win = vim.api.nvim_open_win(term.buf, true, {
+    relative = "editor",
+    width = w,
+    height = h,
+    col = math.floor((vim.o.columns - w) / 2),
+    row = math.floor((vim.o.lines - h) / 2),
+    border = "rounded",
+  })
+  if new then
+    vim.fn.jobstart(vim.o.shell, {
+      term = true,
+      on_exit = function()
+        vim.schedule(function()
+          pcall(vim.api.nvim_buf_delete, term.buf, { force = true })
+        end)
+      end,
+    })
+  end
+  vim.cmd.startinsert()
+end, { desc = "[T]oggle floating [T]erminal" })
+
 -- [[ Autocmds ]]
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   desc = "Reload files changed outside nvim (e.g. by an agent)",
@@ -124,6 +157,7 @@ vim.pack.add({
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/nvim-lua/plenary.nvim", -- required by yazi.nvim
   "https://github.com/mikavilpas/yazi.nvim",
+  "https://github.com/ibhagwan/fzf-lua",
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 }, { confirm = false })
 
@@ -179,15 +213,16 @@ local pick, extra = MiniPick.builtin, MiniExtra.pickers
 local map = vim.keymap.set
 map("n", "<leader>sh", pick.help, { desc = "[S]earch [H]elp" })
 map("n", "<leader>sk", extra.keymaps, { desc = "[S]earch [K]eymaps" })
-map("n", "<leader>sf", pick.files, { desc = "[S]earch [F]iles" })
-map("n", "<leader>sw", function()
-  pick.grep({ pattern = vim.fn.expand("<cword>") })
-end, { desc = "[S]earch current [W]ord" })
-map("n", "<leader>sg", pick.grep_live, { desc = "[S]earch by [G]rep" })
+-- File, grep and buffer pickers use fzf-lua for its side-by-side preview; the rest stay on mini.pick.
+-- fzf-lua's resume only resumes fzf-lua pickers.
+local fzf = require("fzf-lua")
+map("n", "<leader>sf", fzf.files, { desc = "[S]earch [F]iles" })
+map("n", "<leader>sw", fzf.grep_cword, { desc = "[S]earch current [W]ord" })
+map("n", "<leader>sg", fzf.live_grep, { desc = "[S]earch by [G]rep" })
 map("n", "<leader>sd", extra.diagnostic, { desc = "[S]earch [D]iagnostics" })
-map("n", "<leader>sr", pick.resume, { desc = "[S]earch [R]esume" })
+map("n", "<leader>sr", fzf.resume, { desc = "[S]earch [R]esume" })
 map("n", "<leader>s.", extra.oldfiles, { desc = "[S]earch Recent Files" })
-map("n", "<leader><leader>", pick.buffers, { desc = "[ ] Find existing buffers" })
+map("n", "<leader><leader>", fzf.buffers, { desc = "[ ] Find existing buffers" })
 map("n", "<leader>/", function()
   extra.buf_lines({ scope = "current" })
 end, { desc = "[/] Fuzzily search in current buffer" })
@@ -195,7 +230,7 @@ map("n", "<leader>s/", function()
   extra.buf_lines({ scope = "all" })
 end, { desc = "[S]earch [/] in Open Buffers" })
 map("n", "<leader>sn", function()
-  pick.files(nil, { source = { cwd = vim.fn.stdpath("config") } })
+  fzf.files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "[S]earch [N]eovim files" })
 
 -- [[ File explorer: yazi (binary in ~/.local/bin) ]]
